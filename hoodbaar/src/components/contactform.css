@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    padding: 30px;
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    min-height: 100vh;
+}
+
+
+.contact-info {
+    flex: 1;
+    text-align: left;
+    color: aliceblue;
+    width: 100%;
+    font-family: 'Playfair Display', serif;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contact-info h2 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.contact-details p {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    gap: 10px;
+}
+
+.contact-details a {
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f7f7f7;
+    outline: none;
+    font-family: 'Playfair Display', serif;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+button {
+    background-color: #1c130f;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Playfair Display', serif;
+}
+
+button:hover {
+    background-color: #C0A897;
+}
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-info h2 {
+        font-size: 3rem;
+    }
+
+    .contact-info p {
+        font-size: 1.5rem;
+    }
+
+    .contact-details p {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .contact-info h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-info p {
+        font-size: 1.2rem;
+    }
+
+    .contact-container {
+        padding: 30px;
+        gap: 20px;
+    }
+
+    input, textarea {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .contact-container {
+        padding: 20px;
+    }
+}
+
