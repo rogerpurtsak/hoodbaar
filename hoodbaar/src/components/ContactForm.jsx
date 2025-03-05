@@ -17,13 +17,18 @@ const ContactForm = () => {
         }
     
         try {
-            console.log("API URL:", process.env.REACT_APP_API_URL);
+            console.log("Checking API Fetch Function...");
+
+            const apiUrl = "https://hoodbaar.onrender.com"; // Hardcoded backup
+
+            console.log("API URL:", apiUrl); // Debugging
             
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/send-email`, {
+            const response = await fetch(`${apiUrl}/send-email`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
             });
+            
         
             if (!response.ok) {
                 const text = await response.text(); // Read the response as text
