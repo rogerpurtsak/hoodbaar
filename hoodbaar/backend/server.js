@@ -24,6 +24,8 @@ app.use(express.json());
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
+const senderEmail = process.env.EMAIL_FROM || "fallback@example.com";
+
 app.post("/send-email", async (req, res) => {
     const { name, email, message } = req.body;
 
@@ -68,7 +70,7 @@ app.post("/send-email", async (req, res) => {
     
 });
 
-// Start the server
+// server toole
 const PORT = 3001;
 app.listen(PORT, () => {
     console.log(`🚀 Server running on port ${PORT}`);
