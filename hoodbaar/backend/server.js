@@ -12,13 +12,14 @@ const allowedOrigins = [
     "https://hoodbaar.vercel.app"
 ];
 
-app.use(cors({
-    origin: allowedOrigins,
-    methods: "POST",
-    allowedHeaders: ["Content-Type"],
-    credentials: true,
-    optionsSuccessStatus: 200,
-}));
+app.use(cors());
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*"); // koik domainid lubatud
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    next();
+});
+
 
 app.use(express.json());
 

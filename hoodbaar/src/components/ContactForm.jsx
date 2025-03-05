@@ -19,7 +19,7 @@ const ContactForm = () => {
         try {
             console.log("Checking API Fetch Function...");
 
-            const apiUrl = "https://hoodbaar.onrender.com"; // Hardcoded backup
+            const apiUrl = REACT_APP_API_URL;
 
             console.log("API URL:", apiUrl); // Debugging
             
