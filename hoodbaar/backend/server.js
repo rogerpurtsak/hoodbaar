@@ -12,20 +12,15 @@ const allowedOrigins = [
     "https://hoodbaar.vercel.app"
 ];
 
-const corsOptions = {
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error("Not allowed by CORS"));
-        }
-    },
+app.use(cors({
+    origin: allowedOrigins, // ✅ Allows requests from your frontend
     methods: "POST",
     allowedHeaders: ["Content-Type"],
-    optionsSuccessStatus: 200
-};
+    credentials: true,
+    optionsSuccessStatus: 200, // ✅ Fixes preflight issues
+}));
 
-app.use(cors(corsOptions));
+app.use(express.json());
 
 
 // Set SendGrid API Key
