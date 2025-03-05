@@ -10,9 +10,7 @@
     justify-content: center;
     gap: 70px;
     padding: 30px;
-    width: 80%;
-    max-width: 1000px;
-    margin: auto;
+    width: 100%;
     min-height: 100vh;
 }
 

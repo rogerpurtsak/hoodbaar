@@ -7,13 +7,13 @@ function About() {
     <div className='compo-taga'>
     <AboutComponent 
     text={{ title: "Mul pole tra orna aimu ka mida siia soovite", description: "This is text on the left." }} 
-    imageUrl="/hood_naine.jpg"
+    imageUrl="gregoorius.jpg"
     reverse={false} //text vasakul
     />
 
     <AboutComponent 
     text={{ title: "parem", description: "This is text on the parem." }} 
-    imageUrl="/hood_naine.jpg"
+    imageUrl="jansa.jpg"
     reverse={true} //text parem
     />
     </div>

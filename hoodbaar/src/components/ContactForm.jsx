@@ -8,14 +8,35 @@ const ContactForm = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+    
         if (!formData.name || !formData.email || !formData.message) {
             alert("Please fill in all required fields.");
             return;
         }
-        console.log("Form submitted:", formData);
+    
+        try {
+            const response = await fetch("http://localhost:3001/send-email", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+    
+            const data = await response.json();
+            
+            if (response.ok) {
+                alert("✅ Your message has been sent successfully!");
+                setFormData({ name: "", email: "", message: "" });
+            } else {
+                alert(`❌ Failed to send message: ${data.error}`);
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("❌ Something went wrong. Please try again.");
+        }
     };
+    
 
     return (
         <div className="contact-container">
