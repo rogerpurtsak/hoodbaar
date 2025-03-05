@@ -17,23 +17,25 @@ const ContactForm = () => {
         }
     
         try {
+            console.log("API URL:", process.env.REACT_APP_API_URL);
+            
             const response = await fetch(`${process.env.REACT_APP_API_URL}/send-email`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
             });
-            
-            const data = await response.json();
-            
-            if (response.ok) {
-                alert("✅ Your message has been sent successfully!");
-                setFormData({ name: "", email: "", message: "" });
-            } else {
-                alert(`❌ Failed to send message: ${data.error}`);
+        
+            if (!response.ok) {
+                const text = await response.text(); // Read the response as text
+                throw new Error(`HTTP ${response.status}: ${text}`);
             }
+        
+            const data = await response.json();
+            alert("✅ Your message has been sent successfully!");
+            setFormData({ name: "", email: "", message: "" });
         } catch (error) {
-            console.error("Error:", error);
-            alert("❌ Something went wrong. Please try again.");
+            console.error("Fetch Error:", error);
+            alert(`❌ Something went wrong: ${error.message}`);
         }
     };
     
