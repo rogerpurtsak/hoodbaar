@@ -13,27 +13,45 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-    origin: allowedOrigins, // ✅ Allows requests from your frontend
+    origin: allowedOrigins,
     methods: "POST",
     allowedHeaders: ["Content-Type"],
     credentials: true,
-    optionsSuccessStatus: 200, // ✅ Fixes preflight issues
+    optionsSuccessStatus: 200,
 }));
 
 app.use(express.json());
 
-
-// Set SendGrid API Key
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.post("/send-email", async (req, res) => {
     const { name, email, message } = req.body;
 
     const msg = {
-        to: "rogerpurtsak10@gmail.com",  // The email that will receive the message
-        from: process.env.EMAIL_FROM,  // Must be a verified email in SendGrid
-        subject: `New Contact Form Submission from ${name}`,
-        text: `From: ${name} (${email})\n\n${message}`,
+        to: "rogerpurtsak10@gmail.com",
+        from: senderEmail,
+        replyTo: email,
+        subject: `📩 New Contact Form Submission from ${name}`,
+        text: `
+    📢 New Message from Hoodbaar Contact Form
+    
+    👤 Name: ${name}
+    ✉️ Email: ${email}
+    📝 Message: 
+    
+    ${message}
+    
+    🔄 You can reply directly to this email to contact the sender.
+    `,
+        html: `
+        <h2>📢 New Message from Hoodbaar Contact Form</h2>
+        <p><strong>👤 Name:</strong> ${name}</p>
+        <p><strong>✉️ Email:</strong> <a href="mailto:${email}">${email}</a></p>
+        <p><strong>📝 Message:</strong></p>
+        <blockquote>${message}</blockquote>
+        <hr>
+        <p>🔄 <em>You can reply directly to this email to contact the sender.</em></p>
+        `
     };
 
     try {
