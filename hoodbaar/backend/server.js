@@ -8,7 +8,8 @@ const app = express();
 
 const allowedOrigins = [
     "http://localhost:3000",  // local
-    "https://hoodbaar.ee"   // hoodi leht fr
+    "https://hoodbaar.ee" ,
+    "https://hoodbaar.vercel.app"
 ];
 
 const corsOptions = {

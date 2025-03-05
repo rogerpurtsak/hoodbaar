@@ -17,12 +17,12 @@ const ContactForm = () => {
         }
     
         try {
-            const response = await fetch("https://hoodbaar.onrender.com/send-email", {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/send-email`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
             });
-    
+            
             const data = await response.json();
             
             if (response.ok) {
