@@ -10,8 +10,6 @@ function Home() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
         }
       });
     }, { threshold: 0.5 });
@@ -43,7 +41,7 @@ function Home() {
         <div className='back-pic'></div>
         <div className='text-container'>
           <div className="secondpagetext">
-            <h3>ilma napsuta me tood ei tee</h3>
+            <h3>ilma napsuta me tööd ei tee</h3>
           </div>
         </div>
       </div>

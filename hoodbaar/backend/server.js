@@ -70,6 +70,10 @@ app.post("/send-email", async (req, res) => {
     
 });
 
+app.get("/", (req, res) => {
+    res.send("Server is running! 🚀");
+  });
+  
 // server toole
 const PORT = 3001;
 app.listen(PORT, () => {

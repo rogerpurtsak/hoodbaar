@@ -11,7 +11,7 @@
     min-height: 100vh;
     padding: 20px;
     background-color: #f8f8f8;
-    background-image: url("hood_home.jpg");
+    background-image: url("/hood_home.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -134,7 +134,7 @@ h1 {
 .back-pic {
     min-width: 50vw;
     min-height: 100vh;
-    background-image: url('mobileviewtaust.jpg');
+    background-image: url('/mobileviewtaust.jpg');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;

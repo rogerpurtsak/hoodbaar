@@ -5,6 +5,7 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import Gallery from "./pages/Gallery.jsx";
+import Location from "./pages/Location.jsx"
 import Footer from "./components/Footer.jsx";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/gallery" element={<Gallery />} />
+                <Route path="/location" element={<Location />} />
             </Routes>
             <Footer className="footer"/>
         </Router>

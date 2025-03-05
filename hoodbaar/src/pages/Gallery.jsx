@@ -28,10 +28,10 @@ function Gallery() {
       <div className="section teine"></div>
       <div className="section kolmas"></div>
       <div className="section neljas"></div>
-      <div className="section viies">
-        <img src="/gallery_pics/hood_jook.jpg" alt="Joogikene" />
-        <img src="/gallery_pics/IMG-9078.jpg" alt="Jook" />
-      </div>
+      <div className="section viies"></div>
+      <div className="section kuues"></div>
+      <div className="section seitsmes"></div>
+      <div className="section kaheksas"></div>
     </div>
   );
 }
