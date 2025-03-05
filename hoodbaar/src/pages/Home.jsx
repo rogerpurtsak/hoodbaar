@@ -25,7 +25,7 @@ function Home() {
     <>
       <div className="home-body">
         <div className="hometext1">
-          <h1>HOOD</h1>
+          <h1>HØØD</h1>
           <p>Come thirsty, <br />leave legendary.</p>
         </div>
         <div className="shape top-left"></div>
