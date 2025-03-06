@@ -31,7 +31,7 @@ app.post("/send-email", async (req, res) => {
     const { name, email, message } = req.body;
 
     const msg = {
-        to: "rogerpurtsak10@gmail.com",
+        to: "huudbaar@gmail.com",
         from: senderEmail,
         replyTo: email,
         subject: `📩 New Contact Form Submission from ${name}`,

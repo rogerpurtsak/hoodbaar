@@ -20,8 +20,6 @@ const ContactForm = () => {
             console.log("Checking API Fetch Function...");
 
             const apiUrl = process.env.REACT_APP_API_URL || "https://hoodbaar.onrender.com";
-
-            console.log("API URL:", apiUrl); // Debugging
             
             const response = await fetch(`${apiUrl}/send-email`, {
                 method: "POST",
@@ -31,7 +29,7 @@ const ContactForm = () => {
             
         
             if (!response.ok) {
-                const text = await response.text(); // Read the response as text
+                const text = await response.text();
                 throw new Error(`HTTP ${response.status}: ${text}`);
             }
         
