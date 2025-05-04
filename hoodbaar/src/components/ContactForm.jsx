@@ -51,7 +51,6 @@ const ContactForm = () => {
                 <p>It's time to create something great and audible together!</p>
                 <div className="contact-details">
                     <p>📧 <a href="mailto:huudbaar@gmail.com">huudbaar@gmail.com</a></p>
-                    <p>☎️ <a href="tel:+37258364966">+372 5836 4966</a></p>
                 </div>
             </div>
 
